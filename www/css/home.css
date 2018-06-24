@@ -1,0 +1,43 @@
+.padding h4, h3{
+	color:#fff;
+}
+
+.stuDetails{
+	font-size:100%;
+}
+.stuDetails hr{
+	margin:3% 0%;
+}
+
+.footerDetailed{
+	//height:60%;
+    background: -webkit-linear-gradient(90deg, #841a9b 0%,rgba(10, 13, 33, 0) 100%);
+    //text-align:center center;
+    padding:0 2%;
+    //border:1px solid red;
+    //width:50%;
+
+    position: absolute;
+    bottom: 0%;
+    width: 100%
+}
+
+.superWrapper{
+	background:url('../img/homeBG.jpg');
+	background-size: 100% 100%;
+	background-attachment: fixed;
+    background-repeat: no-repeat;
+}	
+
+.roundImg{ 
+    background-size: 100%;
+	//background-attachment: fixed;
+    background-position: 0% 20%; 
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    width: 40vw;
+    height: 40vw;
+    border:3px solid #fff;
+    text-align: center;
+    box-shadow: 0px 0px 12px 3px #464646;
+}

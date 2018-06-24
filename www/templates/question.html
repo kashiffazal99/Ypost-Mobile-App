@@ -1,0 +1,80 @@
+<link rel="stylesheet" type="text/css" href="css/post.css">
+<div class="bar"><button class="menuBtn" menu-toggle="left"><i class="icon ion-navicon"></i></button></div>
+<ion-view>
+	<ion-content class="wrapper">
+
+		<ion-refresher
+		    pulling-text="Refreshing..."
+		    on-refresh="getData()">
+		</ion-refresher>
+	
+		<header class="padding">
+			<br/>
+			<img src="img/comments.png" style="width:20%">
+			<h1>Question</h1>
+			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+		</header><!--end header-->
+
+		<div style="overflow: auto;margin-top:-200px;font-size:90%">
+
+				<form ng-submit="sendQuestion(questionModel,stuDetails.id);">
+					<div class="list">
+
+						<label class="item item-input">
+							<textarea placeholder="Type your question here" ng-model="questionModel" required></textarea>
+						
+						
+						</label>
+						<button  class="button button-full button-positive">
+							Send
+						</button>
+					</div>
+				</form>
+
+
+
+			
+			<div ng-show="showPostListLoader == 'false'" style="color:#fff;text-align:center">
+				Loading Data<br/>
+				Please wait...<br/>
+				<img src="img/loading.gif">
+			</div>
+
+			<div ng-show="showPostListLoader == 'true'" ng-repeat="data in dataArray" class="padding dataRepeat">
+				<div class="card">
+				  <div class="item item-text-wrap" style="font-size:14px;background: rgb(12, 191, 214);color: #fff;padding: 10px 15px;">
+				    {{data.comments}}
+				  </div>
+				  <div ng-show="data.ans" class="item item-text-wrap" style="font-size:12px;padding-bottom: 5px;">
+				    {{data.ans}}
+
+				    <hr/>
+				    <span style="font-size:9px">
+					    Answer Date and Time : 
+					    {{data.ans_date}} {{data.ans_time}}
+				    </span>
+				  </div><!--End item-text-wrap-->
+				 <div class="item item-divider" style="font-size:11px">
+				    <b>Date and Time</b> : {{data.comment_date}} {{data.comment_time}}
+				  </div>
+				</div>
+			</div><!--End ng-repeat-->
+
+			<div ng-show="dataArray.length == 0" class="padding dataRepeat" style="padding:5%;text-align:center">
+			No data found
+			</div>
+
+		</div><!--End list Container-->
+
+
+
+
+
+
+
+
+
+
+		<br/><br/><br/>
+	</ion-content>
+</ion-view>

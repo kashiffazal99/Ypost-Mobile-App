@@ -1,0 +1,89 @@
+<link rel="stylesheet" type="text/css" href="css/home.css">
+<div class="bar"><button class="menuBtn" menu-toggle="left"><i class="icon ion-navicon"></i></button></div>
+
+<ion-view class="superWrapper">
+  <ion-content>
+
+
+
+	 
+
+	  <div class="padding">
+		<center>
+		  	<br/><br/>
+			<h4>WORLD LEARNING GRAMMAR SCHOOL</h4>
+		  	<hr style="margin:0px 10px"/>
+			<h3>{{stuDetails.name}} {{stuDetails.f_name}}</h3>
+			<div class="roundImg" ng-show="stuDetails.profileImg" style='background-image:url({{stuImgFolderPath}}{{stuDetails.profileImg}})'></div>
+			<div class="roundImg" ng-hide="stuDetails.profileImg" style='background-image:url(img/user-icon.jpg)'></div>
+		</center><!--center-->
+	  </div><!--End padding-->
+	
+
+
+<!--         <ion-scroll scroll-height>
+ -->
+
+	<div ng-hide="stuDetails" style="text-align:center">
+		<br/><br/>
+		<span style="color:#fff">Loading data, Please wait...</span><br/>
+		<img src="img/loading.gif"/>
+	</div>
+
+  </ion-content>
+
+
+  <span ng-show="stuDetails">
+
+		<!--Details Sections-->
+		<div class="footerDetailed">
+			<div class="row">
+				<div class="col stuDetails">
+					<br/><br/><br/><br/><br/>
+					<table border='1' width='100%'>
+						<tr>
+							<td width="50%"><i class="ion-grid"></i> Total Posts ({{totalPosts}})</td>
+							<td width="50%"><i class="ion-chatbox-working"></i> Comments ({{totalComments}})</td>
+						</tr>
+					</table>
+					<hr>
+					<table border='1' width='100%'>
+						<tr>
+							<td width="50%"><i class="ion-ios-location"></i> Campus : 
+								<ul style="padding-left:10px">
+									<li>{{stuDetails.campus}}</li>
+								</ul>
+							</td>
+							<td width="50%"><i class="ion-ios-pricetag"></i> Shift : 
+								<ul style="padding-left:14px">
+									<li>{{stuDetails.shift}}</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+					<hr>
+					<table border='1' width='100%'>
+						<tr>
+							<td width="50%"><i class="ion-university"></i> Class :
+								<ul style="padding-left:10px">
+									<li>{{stuDetails.class}} {{stuDetails.section}}</li>
+								</ul>
+							</td>
+							<td width="50%"><i class="ion-arrow-graph-up-right"></i> Student ID:
+								<ul style="padding-left:14px">
+									<li>{{stuDetails.stu_id}}</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+					<div style="height:70px"></div>
+
+					<br/>
+				</div><!--End col-->
+			</div><!--End row-->
+		</div><!--footerDEtaild-->
+		<!--End Details Sections-->
+
+	</span><!--End span for checking stuDetails from rootscope-->
+
+</ion-view>

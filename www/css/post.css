@@ -1,0 +1,25 @@
+	header{
+		background:#1c4680;
+		background: -webkit-linear-gradient(90deg,#1c4680 70%,rgba(255, 255, 255, 0) 100%);
+	}
+	header,h1,h3{
+		color:#fff;
+		text-align:center;
+		text-shadow:2px 2px 2px #000;
+	}
+	header i{
+		font-size:100vw;
+		color:#fff;
+	}
+	.dataRepeat{
+		margin:0% 5%;
+		padding:0%;
+		background:#fff;
+	}
+	.wrapper{
+		background: -webkit-linear-gradient(90deg, #d7d7d7 70%,#1c4680 0%);
+		//height:-300px;
+	}
+	.postDetails p{
+		font-size:70%;
+	}

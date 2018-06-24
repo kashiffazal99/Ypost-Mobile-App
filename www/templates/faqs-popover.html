@@ -1,0 +1,40 @@
+<style type="text/css">
+	.list>a:nth-child(even){background: #f4f4ff;}
+	.list>a:nth-child(odd){background: #FFF}
+</style>
+
+      <ion-modal-view>
+        
+        <ion-header-bar  class="bar bar-header indexFooterPagesHeader">
+          <span ng-hide="showDetails">
+          <a href="" ng-click="modal.hide()" >
+            <h1 class="title" style="text-align:center;color:#fff">FAQ</h1>
+            <button class="button button-primary" ng-click="closeModal()" style="width:15%;color:#fff;background:#0cbfd6;border:1px solid #fff">X</button>
+          </a>
+          </span>
+          <span ng-show="showDetails">
+            <h1 class="title" style="text-align:center;color:#fff">FAQ</h1>
+			<button class="button button-primary" ng-click="changeShowDetails()" style="width:15%;color:#fff;background:#0cbfd6;border:1px solid #fff"><i class="ion-chevron-left"></i></button>          	
+          </span>
+        </ion-header-bar>
+
+
+        <ion-content class="padding">
+
+
+		<div class="list" ng-hide="showDetails">
+		  <a ng-repeat="fd in faqsData" class="item item-icon-right" href="" ng-click="showListAnsware($index)">
+		    {{fd.Question}}
+		    <i class="icon ion-ios-arrow-forward"></i>
+		  </a>
+		</div><!-- End List -->
+
+		<div style='padding: 1% 5%' ng-show="showDetails">
+			<h5>{{question}}</h5>
+			{{answer}}
+		</div>
+
+
+
+        </ion-content>
+      </ion-modal-view>

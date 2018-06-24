@@ -1,0 +1,14 @@
+{
+  "name": "WLI_App_1",
+  "app_id": "8af8e422",
+  "type": "ionic1",
+  "watchPatterns": [
+    "scss/**/*",
+    "www/**/*",
+    "!www/lib/**/*",
+    "!www/**/*.map"
+  ],
+  "integrations": {
+    "cordova": {}
+  }
+}

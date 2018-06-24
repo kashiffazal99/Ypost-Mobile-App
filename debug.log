@@ -1,0 +1,14 @@
+[0520/142151.328:ERROR:process_info.cc(625)] range at 0x36b72a1400000000, size 0xcf fully unreadable
+[0520/142153.106:ERROR:process_info.cc(625)] range at 0x36b72a7a00000000, size 0xcf fully unreadable
+[0520/142153.107:ERROR:process_info.cc(625)] range at 0x0, size 0xcf fully unreadable
+[0520/142202.521:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: An attempt was made to access an exiting process.  (0xc000010a)
+[1028/182809.717:ERROR:crash_report_database_win.cc(427)] unexpected header
+[1029/135134.645:ERROR:crash_report_database_win.cc(427)] unexpected header
+[1030/005500.583:ERROR:crash_report_database_win.cc(427)] unexpected header
+[1030/210711.450:ERROR:crash_report_database_win.cc(427)] unexpected header
+[1031/195840.721:ERROR:crash_report_database_win.cc(427)] unexpected header
+[1102/201408.607:ERROR:crash_report_database_win.cc(427)] unexpected header
+[1102/204735.596:ERROR:crash_report_database_win.cc(427)] unexpected header
+[1104/152337.217:ERROR:crash_report_database_win.cc(427)] unexpected header
+[1104/154057.008:ERROR:crash_report_database_win.cc(427)] unexpected header
+[1104/175658.945:ERROR:crash_report_database_win.cc(427)] unexpected header

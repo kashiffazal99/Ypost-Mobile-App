@@ -1,0 +1,26 @@
+      <ion-modal-view>
+        
+        <ion-header-bar class="bar bar-header indexFooterPagesHeader">
+          <a href="" ng-click="modal.hide()" >
+            <h1 class="title" style="text-align:center;color:#fff">Locate Us</h1>
+            <button class="button button-primary" ng-click="closeModal()" style="width:15%;color:#fff;background:#0cbfd6;border:1px solid #fff">X</button>
+          </a>
+        </ion-header-bar>
+
+        <ion-content class="padding">
+
+
+      <div class="list card" ng-repeat="loc in location">
+        <div class="item item-body">
+          <h2>{{loc.Area}} {{loc.Campus}}</h2>
+          <hr/>
+          <img ng-show="loc.Map" class="full-image" ng-src="{{loc.Map}}">
+          <p ng-bind-html="loc.Address"></p>
+        </div>
+          
+      </div>
+
+
+
+        </ion-content>
+      </ion-modal-view>

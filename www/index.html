@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <script src="lib/bluebird.min.js"></script>
+
+
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic.cloud.min.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="js/ng-cordova.min.js"></script>
+    <script src="cordova.js"></script>
+    <!-- <script src="lib/VideoPlayer.js"></script> -->
+    <!-- <script src="lib/StreamingMedia.js"></script> -->
+    
+    
+
+
+    <script src="lib/firebase/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAOoJMKg2zs050WZJE3_jk4obuXE6qT6ic",
+        authDomain: "wliapp-3faae.firebaseapp.com",
+        databaseURL: "https://wliapp-3faae.firebaseio.com",
+        projectId: "wliapp-3faae",
+        storageBucket: "wliapp-3faae.appspot.com",
+        messagingSenderId: "1044509584634"
+      };  
+      firebase.initializeApp(config);
+    </script>
+    <!-- AngularFire -->
+    <script src="lib/firebase/angularfire.min.js"></script>
+
+
+
+
+ <link href="css/video-js.css" rel="stylesheet">
+    <!-- <script src="lib/videojs-ie8.min.js"></script> -->
+    <script src="lib/video.js"></script>
+    <script src="lib/vjs-video.js" type="text/javascript"></script>
+
+
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/homeController.js"></script>
+    <script src="js/questionController.js"></script>
+    <script src="js/loginController.js"></script>
+    <script src="js/videoPostController.js"></script>
+    <script src="js/audioPostController.js"></script>
+    <script src="js/documentPostController.js"></script>
+    <script src="js/otherPostController.js"></script>
+    <script src="js/postController.js"></script>
+    <script src="js/forgorPasswordController.js"></script>
+    <script src="js/announcementControllr.js"></script>
+    <script src="js/circularController.js"></script>
+    <script src="js/updatesController.js"></script>
+    <script src="js/resultsController.js"></script>
+    <script src="js/miscellaneousController.js"></script>
+    
+    
+    
+    
+
+
+<link rel="stylesheet" type="text/css" href="css/customStyles.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+  </head>
+
+  <body ng-app="starter" ng-controller="AppCtrl" >
+    
+  <span ng-hide="fireServerDataBlocked.mobile_app_block">
+    <ion-nav-view></ion-nav-view>
+    <span ng-show="stuDetails" style="border:1px solid red">
+    
+      <div class="bar bar-footer hide-on-keyboard-open" ng-show="showFooterBtns" style="padding:0px;border:0px solid red;height:70px">
+          <!--Posts Button Sections-->
+          <div class="row footerMenus">
+            <div class="col">
+              <a href="#/app/videoPost" class="button button-full tabBtn videoPost" style="font-size:10px">
+                <i class="ion-play"></i><br/>VIDEO POSTS
+            </a>
+            </div><!--End col-->
+            <div class="col">
+              <a href="#/app/audioPost" class="button button-full tabBtn otherPost" style="font-size:10px">
+                <i class="ion-mic-a"></i><br/>AUDIO POSTS
+            </a>
+            </div><!--End col-->
+            <div class="col">
+              <a href="#/app/documentPost" class="button button-full tabBtn audioPost" style="font-size:10px">
+                <i class="ion-document-text"></i><br/>DOCUMENTS
+            </a>
+            </div><!--End col-->
+            <div class="col">
+              <a href="#/app/otherPost" class="button button-full tabBtn documentsPost" style="font-size:10px">
+                <i class="ion-images"></i><br/>OTHER POSTS
+            </a>
+            </div><!--End col-->
+          </div><!--End row-->
+          <!--/End Posts Button Sections-->
+      </div><!--End footer-->
+    
+    </span>
+
+
+    <div class="bar bar-footer loginFooter hide-on-keyboard-open"  ng-hide="showFooterBtns || !domainPath">
+        <!--Posts Button Sections-->
+        <div class="row">
+          <div class="col">
+            <a href="" ng-click="showModal('templates/locateUs-popover.html');getLocationFun();" class="loginFooterLinks">
+              <i class="ion-ios-location-outline"></i><br/>Locate Us
+          </a>
+          </div><!--End col-->
+          <!-- <div class="col">
+            <a href="" ng-click="showModal('templates/faqs-popover.html');getFaqsFun();" class="loginFooterLinks">
+              <i ng-class="changeFooterIconColor ? 'ion-ios-help' : 'ion-ios-help-outline'"></i><br/>FAQs
+          </a>
+          </div> --><!--End col-->
+          <div class="col">
+            <!-- <a href="" ng-click="showModal('templates/otherProjects-popover.html');getOtherProjectsFun();"  class="loginFooterLinks">
+              <i class="ion-ios-book-outline"></i><br/>Others
+          </a> -->
+           <a href="" ng-click="showModal('templates/founder-director-popover.html');getFounderDirectorFun();"  class="loginFooterLinks">
+              <i class="ion-ios-book-outline"></i><br/>Founder / Director
+          </a>
+          </div><!--End col-->
+        </div><!--End row-->
+        <!--/End Posts Button Sections-->
+    </div><!--End footer-->
+
+  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--- App Block Area -->
+<ion-view view-title="Login" ng-show="fireServerDataBlocked.mobile_app_block">
+  <ion-content style="text-align:center">
+    <br/><br/>
+    <center><img src="img/block.jpg" width="150px"></center><br/>
+    <h1>APP BLOCKED</h1>
+    <div style="width:50%;margin:0 auto;">
+    <span style="color:red">Developer</span> blocked this app.
+    The requested operation requires permission.
+    </div>
+  </ion-contasent>
+</ion-view>
+<!--- /End App Block Area -->
+
+
+
+
+  </body>
+</html>

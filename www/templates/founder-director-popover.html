@@ -1,0 +1,30 @@
+<ion-modal-view>
+
+<ion-header-bar  class="bar bar-header indexFooterPagesHeader">
+  <a href="" ng-click="modal.hide()" >
+    <h1 class="title" style="text-align:center;color:#fff">Founder / Director</h1>
+    <button class="button button-primary" ng-click="closeModal()" style="width:15%;color:#fff;background:#0cbfd6;border:1px solid #fff">X</button>
+  </a>
+</ion-header-bar>
+
+
+<ion-content class="padding" style="padding:8%;text-align:justify-all;">
+
+<div style="text-align:center">
+	<h2>{{aboutUsData.Title}}</h2>
+	<hr/>
+	<img src="{{jsonPath}}/{{aboutUsData.Img}}" width="80%"/>
+</div>
+<br/>
+<span ng-bind-html="aboutUsData.data"></span>
+ 
+<a href="" ng-click="gotoLink(aboutUsData.readMore)" target="_blank">Read More</a>
+<br/><br/>
+<span ng-bind-html="aboutUsData.contact"></span>
+<br/>
+<center>
+	<a href="" ng-click="gotoLink('https://www.facebook.com/'+aboutUsData.fb)" target="_blank"><img src="img/fb_find_me.gif" width="130px"></a>
+</center>
+<br/><br/>
+</ion-content>
+</ion-modal-view>

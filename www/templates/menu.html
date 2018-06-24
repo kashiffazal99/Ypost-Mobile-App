@@ -1,0 +1,31 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <!-- <ion-header-bar class="bar-stable">
+      <h1 class="title">Menu</h1>
+      <p></p>
+    </ion-header-bar> -->
+    
+    <ion-content style="background:#4e4e4e">
+      <div class="menuHader">
+
+      <!-- <img src="img/user-icon.jpg" width="100%" style="margin:0px"> -->
+      <p>{{stuDetails.regDate}} (Registration Date)</p>
+
+      </div>
+      <ion-list>
+
+        <ion-item menu-close href="#/app/home/{{rootStuId}}">Home</ion-item>
+        <!-- <ion-item menu-close href="">Reset Password</ion-item> -->
+        <ion-item menu-close href="#/app/question">Question ?</ion-item>
+        <ion-item menu-close href="" ng-click="showModal('templates/otherProjects-popover.html');getOtherProjectsFun();">Other Projects</ion-item>
+        <ion-item menu-close href="" ng-click="showModal('templates/founder-director-popover.html');getFounderDirectorFun();">Founder / Director</ion-item>
+        <ion-item menu-close href="" ng-click="logOut(rootStuId)">Logout</ion-item>
+      
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

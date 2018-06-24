@@ -1,0 +1,155 @@
+<style type="text/css">
+.image-list-thumb {
+    padding: 2px 2px 2px 2px;
+    height: 100px;
+}
+ 
+.image-modal {
+    width: 100% !important;
+    height: 100%;
+    top: 0 !important;
+    left: 0 !important;
+}
+ 
+.transparent {
+    background: transparent !important;
+}
+ 
+.fullscreen-image {
+    max-width: 100%;
+    max-height: 100%;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+ 
+.slider {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+.centerme {
+    margin: 0 auto;
+    width: 100%;
+    height:100%;
+}
+ 
+.fullscreen-player {
+    max-width: 100%;
+    max-height: 100%;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+
+</style>
+
+
+
+<link rel="stylesheet" type="text/css" href="css/post.css">
+
+<ion-view>
+<div class="bar"><button class="menuBtn" menu-toggle="left"><i class="icon ion-navicon"></i></button></div>
+<ion-content class="wrapper">
+
+
+
+
+		<header class="padding">
+			<br/>
+			<h3>
+				<span ng-show="resultTitle">Result</span>
+				{{data.title}}
+			</h3>
+			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+		</header><!--end header-->
+
+
+	<div style="overflow: auto;margin-top:-200px;font-size:90%;">
+
+
+			<div ng-show="showPostLoader == 'false'" style="color:#fff;text-align:center">
+				<h2 style="color:#fff">Loading Post</h2>
+				Please wait...<br/>
+				<img src="img/postLoader.gif" width="100px">
+			</div>
+
+			<div ng-show="showPostLoader == 'true'">
+				<div ng-show="type == 'video'" style="text-align:center">
+					<button class="button button-balanced" ng-click="playVideo(postDataPath+data.file,data.youtubeVideoURL)" style="padding: 1% 3%;border: 2px solid #1e3758;box-shadow: 4px 4px 6px #232323;">
+						<i class="ion-play"></i> Play a video
+					</button>
+					<br/><br/>
+				</div>
+
+				<div ng-show="type == 'audio'" style="text-align:center">
+					<a href="" ng-click="playAudio(postDataPath+data.file)" target="_blank" class="button button-balanced" style="padding: 1% 3%;border: 2px solid #1e3758;box-shadow: 4px 4px 6px #232323;">
+		  				<i class="ion-mic-a"></i> Play Audio
+					</a>
+					<br/><br/>
+				</div>
+
+
+				<div ng-show="type == 'miscellaneous'" style="text-align:center">
+	  				<!-- <img src="{{postDataPath}}{{data.file}}" width="90%" style="border: 1px solid #888888;box-shadow: 0px 0px 30px #2f2f2f;"/> -->
+					<a ng-click="showImages();">
+						<img ng-src="{{postDataPath}}{{data.file}}" class="image-list-thumb"/>
+					</a>
+					<br/><br/>
+				</div>
+
+				<div class="padding dataRepeat" style="padding:10px">
+					{{data.description}}
+					<hr/>
+					<span style="font-size:11px;">Date : {{data.resultDate}} {{data.postDate}} {{data.postTime}}</span>
+				</div><!--End ng-repeat-->
+
+				<div ng-show="type == 'document'" style="text-align:center">
+						<br/><br/>
+						<iframe class="doc" style="width:100%;background:none;height:350px" ng-src="{{url}}"></iframe>				
+				</div>
+			</div><!--End showPostLoader = 'true'-->
+
+	</div><!--End list Container-->
+	<br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</ion-content>
+</ion-view>

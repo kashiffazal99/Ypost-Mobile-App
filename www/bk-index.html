@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="js/ng-cordova.min.js"></script>
+    <script src="cordova.js"></script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAOoJMKg2zs050WZJE3_jk4obuXE6qT6ic",
+        authDomain: "wliapp-3faae.firebaseapp.com",
+        databaseURL: "https://wliapp-3faae.firebaseio.com",
+        projectId: "wliapp-3faae",
+        storageBucket: "wliapp-3faae.appspot.com",
+        messagingSenderId: "1044509584634"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="css/customStyles.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  </head>
+
+  <body ng-app="starter" ng-controller="loginCtrl">
+
+
+
+
+<ion-view view-title="Login" class="loginBackground" ng-hide="fireServerDataBlocked.mobile_app_block">
+  <ion-content>
+
+
+    <div class="headerLogin">
+      <br/><br/>
+      <img src="img/logo.png" width="50%">
+      <h4>World Learning Grammer School Mobile App</h4>
+    </div>
+
+    <form ng-submit="doLogin(username,password)">
+    
+      <label class="inputFieldLoginForm">
+        <i class="icon ion-person placeholder-icon"></i>
+        <input type="text" placeholder="Username" ng-model="username" required>
+      </label>
+
+      <label class="inputFieldLoginForm">
+        <i class="icon ion-locked placeholder-icon"></i>
+        <input type="password" placeholder="Password" ng-model="password" required>
+      </label>
+
+      <button class="submitBtnLoginForm" type="submit">Login</button>
+      <div ng-show="errorMsg" style="color:red;text-align:center;margin-bottom:-20px;background: #fff;margin-top: 20px;border-radius: 10px;padding: 4px;"><b>{{errorMsg}}</b></div>
+
+      <br/><br/>
+      <a href="#/app/forgotPassword" class="link" ng-click="goToForgetPassword()">Forgot your password?</a>
+
+    </form>
+
+
+    <br/><br/>
+    <div class="socialLinks">
+      <img src="img/fb.png" width="15%">
+      &nbsp;
+      <img src="img/youtube.png" width="15%">
+    </div>
+
+
+  </ion-content>
+</ion-view>
+
+
+
+
+
+
+<!--- App Block Area -->
+<ion-view view-title="Login" ng-show="fireServerDataBlocked.mobile_app_block">
+  <ion-content style="text-align:center">
+    <br/><br/>
+    <img src="../img/block.jpg" width="150px"><br/>
+    <h1>APP BLOCKED</h1>
+    <div style="width:50%;margin:0 auto;">
+    <span style="color:red">Developer</span> blocked this app.
+    The requested operation requires permission.
+    </div>
+  </ion-contasent>
+</ion-view>
+<!--- /End App Block Area -->
+
+
+
+
+
+
+  </body>
+</html>

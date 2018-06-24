@@ -1,0 +1,67 @@
+{
+    "name": "wli_app_1",
+    "version": "1.1.1",
+    "description": "WLI_App_1: An Ionic project",
+    "dependencies": {
+        "@ionic-native/streaming-media": "^4.2.0",
+        "@ionic/cloud": "^0.16.0",
+        "bluebird": "^3.5.0",
+        "com.dawsonloudon.videoplayer": "~1.0.0",
+        "com.hutchind.cordova.plugins.streamingmedia": "~0.1.4",
+        "com.moust.cordova.videoplayer": "~1.0.1",
+        "cordova-plugin-compat": "^1.0.0",
+        "cordova-plugin-device": "~1.1.5",
+        "cordova-plugin-file": "^4.0.0",
+        "cordova-plugin-file-opener2": "^2.0.16",
+        "cordova-plugin-inappbrowser": "^1.7.1",
+        "cordova-plugin-media": "^3.0.1",
+        "cordova-plugin-native-videoplayer": "0.0.2",
+        "cordova-plugin-nativeaudio": "^3.0.9",
+        "cordova-plugin-network-information": "^1.3.3",
+        "cordova-plugin-streaming-media": "^1.0.2",
+        "cordova-plugin-video-player": "^1.0.1",
+        "cordova-plugin-whitelist": "git+https://github.com/apache/cordova-plugin-whitelist.git",
+        "git": "^0.1.5",
+        "gulp": "^3.5.6",
+        "gulp-concat": "^2.2.0",
+        "gulp-minify-css": "^0.3.0",
+        "gulp-rename": "^1.2.0",
+        "gulp-sass": "^2.0.4",
+        "phonegap-plugin-push": "^1.10.5"
+    },
+    "devDependencies": {
+        "@ionic/cli-plugin-cordova": "1.6.2",
+        "@ionic/cli-plugin-gulp": "1.1.1",
+        "@ionic/cli-plugin-ionic1": "2.1.1",
+        "bower": "^1.3.3",
+        "gulp-util": "^2.2.14",
+        "ionic": "3.18.0",
+        "shelljs": "^0.3.0"
+    },
+    "cordovaPlugins": [
+        "cordova-plugin-whitelist",
+        "cordova-plugin-console",
+        "cordova-plugin-statusbar",
+        "cordova-plugin-device",
+        "cordova-plugin-splashscreen",
+        "ionic-plugin-keyboard"
+    ],
+    "cordovaPlatforms": [],
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-nativeaudio": {},
+            "cordova-plugin-media": {},
+            "cordova-plugin-file-opener2": {},
+            "phonegap-plugin-push": {
+                "SENDER_ID": "1044509584634"
+            },
+            "cordova-plugin-device": {},
+            "com.moust.cordova.videoplayer": {},
+            "cordova-plugin-network-information": {},
+            "cordova-plugin-inappbrowser": {},
+            "com.dawsonloudon.videoplayer": {},
+            "com.hutchind.cordova.plugins.streamingmedia": {},
+            "cordova-plugin-whitelist": {}
+        }
+    }
+}
